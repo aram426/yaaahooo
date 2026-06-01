@@ -170,65 +170,18 @@ class MCTSAgent(CaptureAgent):
     def _expand(self, node):
         """
         Expansion phase: add one child to the tree.
-        Phase 3 Experiment 1: Fast heuristic scoring (no simulation).
+        Phase 3 Experiment 2: No progressive widening, rely on reward shaping + MCTS exploration.
         """
         # Initialize untried actions if needed
         if node.untried_actions is None:
-            # Get all legal joint actions
-            joint_actions = self._get_legal_joint_actions(node.state)
-
-            # Phase 3 Experiment 1: Fast heuristic scoring without simulation
-            scored_actions = []
-            for joint_action in joint_actions:
-                action0, action2 = joint_action
-
-                # Fast heuristic: score by offensive direction
-                # For red team: East/North towards enemy (right/up)
-                # For blue team: West/North towards enemy (left/up)
-                score = 0
-
-                if self.red:
-                    # Red team goes right/up
-                    if action0 == Directions.EAST:
-                        score += 2
-                    elif action0 == Directions.NORTH:
-                        score += 1
-
-                    if action2 == Directions.EAST:
-                        score += 2
-                    elif action2 == Directions.NORTH:
-                        score += 1
-                else:
-                    # Blue team goes left/up
-                    if action0 == Directions.WEST:
-                        score += 2
-                    elif action0 == Directions.NORTH:
-                        score += 1
-
-                    if action2 == Directions.WEST:
-                        score += 2
-                    elif action2 == Directions.NORTH:
-                        score += 1
-
-                # Penalize STOP actions (encourage movement)
-                if action0 == Directions.STOP:
-                    score -= 5
-                if action2 == Directions.STOP:
-                    score -= 5
-
-                scored_actions.append((joint_action, score))
-
-            # Sort by score (high to low)
-            scored_actions.sort(key=lambda x: x[1], reverse=True)
-
-            # Store sorted actions
-            node.untried_actions = [action for action, _ in scored_actions]
+            # Get all legal joint actions (no scoring, no sorting)
+            node.untried_actions = self._get_legal_joint_actions(node.state)
 
         # No untried actions left
         if not node.untried_actions:
             return node
 
-        # Pick first untried action (most offensive)
+        # Pick first untried action (let MCTS exploration + reward shaping guide selection)
         joint_action = node.untried_actions.pop(0)
 
         # Create successor state
