@@ -97,9 +97,6 @@ class MCTSAgent(CaptureAgent):
         self.start = gameState.getAgentPosition(self.index)
         self.walls = gameState.getWalls()
 
-        # Track initial food count for reward shaping
-        self.initial_food_count = len(self.getFood(gameState).asList())
-
         print(f"Agent {self.index} initialized with teammate {self.teammate_index}")
 
     def chooseAction(self, gameState):
@@ -170,18 +167,16 @@ class MCTSAgent(CaptureAgent):
     def _expand(self, node):
         """
         Expansion phase: add one child to the tree.
-        Phase 3 Experiment 2: No progressive widening, rely on reward shaping + MCTS exploration.
         """
         # Initialize untried actions if needed
         if node.untried_actions is None:
-            # Get all legal joint actions (no scoring, no sorting)
             node.untried_actions = self._get_legal_joint_actions(node.state)
 
         # No untried actions left
         if not node.untried_actions:
             return node
 
-        # Pick first untried action (let MCTS exploration + reward shaping guide selection)
+        # Pick first untried action (TODO: can prioritize offensive actions)
         joint_action = node.untried_actions.pop(0)
 
         # Create successor state
@@ -243,7 +238,7 @@ class MCTSAgent(CaptureAgent):
 
     def _evaluate_state(self, state):
         """
-        Evaluate a game state and return a reward with aggressive bias.
+        Evaluate a game state and return a reward.
         Positive = good for our team, negative = bad.
         """
         # Base score
@@ -252,26 +247,6 @@ class MCTSAgent(CaptureAgent):
         # Adjust for team perspective
         if not self.red:
             score = -score
-
-        # Phase 3: Aggressive bias - reward shaping
-        team = self.getTeam(state)
-
-        # Bonus: agents in enemy territory (encourage offense)
-        num_pacmen = sum(1 for i in team if state.getAgentState(i).isPacman)
-        score += num_pacmen * 3.0  # +3 per pacman
-
-        # Bonus: carrying food (encourage holding food)
-        carrying_total = sum(state.getAgentState(i).numCarrying for i in team)
-        score += carrying_total * 0.8  # +0.8 per food carried
-
-        # Penalty: no one attacking (discourage full defense)
-        if num_pacmen == 0:
-            score -= 8.0  # -8 penalty for both defensive
-
-        # Bonus: food eaten (encourage progress)
-        food_left = len(self.getFood(state).asList())
-        food_eaten = self.initial_food_count - food_left
-        score += food_eaten * 1.5  # +1.5 per food eaten
 
         return score
 
