@@ -202,13 +202,13 @@ class MCTSAgent(CaptureAgent):
             actions = []
             for agent_idx in range(4):
                 try:
-                    legal = current_state.getLegalActions(agent_idx)
-                    if not legal:
-                        actions.append(Directions.STOP)
+                    if agent_idx in self.getTeam(current_state):
+                        # Our agent: smart heuristic
+                        action = self._rollout_policy(current_state, agent_idx)
                     else:
-                        # Random policy for Phase 1 (will improve in Phase 2)
-                        action = random.choice(legal)
-                        actions.append(action)
+                        # Opponent: chase our pacmen
+                        action = self._opponent_policy(current_state, agent_idx)
+                    actions.append(action)
                 except:
                     # Agent might be dead/invalid, skip
                     actions.append(Directions.STOP)
@@ -341,3 +341,191 @@ class MCTSAgent(CaptureAgent):
         legal = gameState.getLegalActions(self.index)
         legal = [a for a in legal if a != Directions.STOP]
         return random.choice(legal) if legal else Directions.STOP
+
+    # ==========================================
+    # Phase 2: Fast Rollout Policy
+    # ==========================================
+
+    def _rollout_policy(self, state, agent_idx):
+        """
+        Fast heuristic for our agents during simulation.
+        Priority-based decision making.
+        """
+        myPos = state.getAgentPosition(agent_idx)
+        if myPos is None:
+            return Directions.STOP
+
+        myState = state.getAgentState(agent_idx)
+
+        # Priority 1: Emergency escape (ghost within 3)
+        if myState.isPacman:
+            ghosts = self._get_enemy_ghosts(state, agent_idx)
+            if ghosts:
+                closest_ghost_pos = min([g.getPosition() for g in ghosts],
+                                       key=lambda p: self._manhattan(myPos, p))
+                if self._manhattan(myPos, closest_ghost_pos) <= 3:
+                    return self._move_away(myPos, closest_ghost_pos, state, agent_idx)
+
+        # Priority 2: Chase invader (if we're ghost)
+        if not myState.isPacman:
+            invaders = self._get_invaders(state, agent_idx)
+            if invaders:
+                closest_inv = min([inv.getPosition() for inv in invaders],
+                                key=lambda p: self._manhattan(myPos, p))
+                return self._move_towards(myPos, closest_inv, state, agent_idx)
+
+        # Priority 3: Go to food (if we're pacman)
+        if myState.isPacman:
+            food = self.getFood(state).asList()
+            if food:
+                closest_food = min(food, key=lambda f: self._manhattan(myPos, f))
+                return self._move_towards(myPos, closest_food, state, agent_idx)
+
+        # Priority 4: Return home if carrying 8+
+        if myState.isPacman and myState.numCarrying >= 8:
+            boundary = self._get_boundary(state, agent_idx)
+            if boundary:
+                closest_boundary = min(boundary, key=lambda b: self._manhattan(myPos, b))
+                return self._move_towards(myPos, closest_boundary, state, agent_idx)
+
+        # Priority 5: Default - enter enemy territory
+        boundary = self._get_boundary(state, agent_idx)
+        if boundary:
+            closest_boundary = min(boundary, key=lambda b: self._manhattan(myPos, b))
+            return self._move_towards(myPos, closest_boundary, state, agent_idx)
+
+        # Fallback: any legal action
+        legal = state.getLegalActions(agent_idx)
+        legal = [a for a in legal if a != Directions.STOP]
+        return random.choice(legal) if legal else Directions.STOP
+
+    def _opponent_policy(self, state, agent_idx):
+        """
+        Model opponent behavior during simulation.
+        Opponents chase our pacmen.
+        """
+        oppPos = state.getAgentPosition(agent_idx)
+        if oppPos is None:
+            return Directions.STOP
+
+        oppState = state.getAgentState(agent_idx)
+
+        # Model 1: Opponent chases our agents
+        our_agents = self.getTeam(state)
+        our_positions = []
+        for i in our_agents:
+            pos = state.getAgentPosition(i)
+            if pos:
+                our_positions.append(pos)
+
+        our_pacmen = [pos for i, pos in zip(our_agents, our_positions)
+                     if state.getAgentState(i).isPacman]
+
+        if our_pacmen and not oppState.isPacman:
+            # Opponent is ghost, we have pacmen → chase closest pacman
+            closest_pacman = min(our_pacmen, key=lambda p: self._manhattan(oppPos, p))
+            return self._move_towards(oppPos, closest_pacman, state, agent_idx)
+
+        # Model 2: Opponent goes for food
+        if oppState.isPacman:
+            our_food = self.getFoodYouAreDefending(state).asList()
+            if our_food:
+                closest_food = min(our_food, key=lambda f: self._manhattan(oppPos, f))
+                return self._move_towards(oppPos, closest_food, state, agent_idx)
+
+        # Default: random legal action
+        legal = state.getLegalActions(agent_idx)
+        return random.choice(legal) if legal else Directions.STOP
+
+    # Helper functions
+    def _manhattan(self, pos1, pos2):
+        """Manhattan distance (fast, O(1))"""
+        return abs(pos1[0] - pos2[0]) + abs(pos1[1] - pos2[1])
+
+    def _move_towards(self, fromPos, toPos, state, agent_idx):
+        """Return action that moves towards target"""
+        dx = toPos[0] - fromPos[0]
+        dy = toPos[1] - fromPos[1]
+
+        # Try primary direction
+        if abs(dx) > abs(dy):
+            primary = Directions.EAST if dx > 0 else Directions.WEST
+        else:
+            primary = Directions.NORTH if dy > 0 else Directions.SOUTH
+
+        if primary in state.getLegalActions(agent_idx):
+            return primary
+
+        # Try secondary direction
+        if abs(dx) > abs(dy):
+            secondary = Directions.NORTH if dy > 0 else Directions.SOUTH
+        else:
+            secondary = Directions.EAST if dx > 0 else Directions.WEST
+
+        if secondary in state.getLegalActions(agent_idx):
+            return secondary
+
+        # Fallback: any legal action except STOP
+        legal = [a for a in state.getLegalActions(agent_idx) if a != Directions.STOP]
+        return random.choice(legal) if legal else Directions.STOP
+
+    def _move_away(self, fromPos, threatPos, state, agent_idx):
+        """Return action that moves away from threat"""
+        # Opposite of _move_towards
+        dx = fromPos[0] - threatPos[0]
+        dy = fromPos[1] - threatPos[1]
+
+        if abs(dx) > abs(dy):
+            primary = Directions.EAST if dx > 0 else Directions.WEST
+        else:
+            primary = Directions.NORTH if dy > 0 else Directions.SOUTH
+
+        if primary in state.getLegalActions(agent_idx):
+            return primary
+
+        # Fallback
+        legal = [a for a in state.getLegalActions(agent_idx) if a != Directions.STOP]
+        return random.choice(legal) if legal else Directions.STOP
+
+    def _get_enemy_ghosts(self, state, agent_idx):
+        """Enemy agents that are ghosts (not scared)"""
+        opponents = self.getOpponents(state)
+        ghosts = []
+        for opp in opponents:
+            opp_state = state.getAgentState(opp)
+            if not opp_state.isPacman and opp_state.getPosition() is not None:
+                if opp_state.scaredTimer <= 0:
+                    ghosts.append(opp_state)
+        return ghosts
+
+    def _get_invaders(self, state, agent_idx):
+        """Enemy agents in our territory"""
+        opponents = self.getOpponents(state)
+        invaders = []
+        for opp in opponents:
+            opp_state = state.getAgentState(opp)
+            if opp_state.isPacman and opp_state.getPosition() is not None:
+                invaders.append(opp_state)
+        return invaders
+
+    def _get_boundary(self, state, agent_idx):
+        """Boundary positions between territories"""
+        walls = state.getWalls()
+        width, height = walls.width, walls.height
+        mid_x = width // 2
+
+        # Red team: x = mid_x - 1, Blue team: x = mid_x
+        if agent_idx in self.getTeam(state):
+            if self.red:
+                x = mid_x - 1
+            else:
+                x = mid_x
+        else:
+            return []
+
+        boundary = []
+        for y in range(1, height - 1):
+            if not walls[x][y]:
+                boundary.append((x, y))
+
+        return boundary
