@@ -356,6 +356,7 @@ class MCTSAgent(CaptureAgent):
             return Directions.STOP
 
         myState = state.getAgentState(agent_idx)
+        legal = state.getLegalActions(agent_idx)
 
         # Priority 1: Emergency escape (ghost within 3)
         if myState.isPacman:
@@ -364,7 +365,9 @@ class MCTSAgent(CaptureAgent):
                 closest_ghost_pos = min([g.getPosition() for g in ghosts],
                                        key=lambda p: self._manhattan(myPos, p))
                 if self._manhattan(myPos, closest_ghost_pos) <= 3:
-                    return self._move_away(myPos, closest_ghost_pos, state, agent_idx)
+                    action = self._move_away(myPos, closest_ghost_pos, state, agent_idx)
+                    if action in legal:
+                        return action
 
         # Priority 2: Chase invader (if we're ghost)
         if not myState.isPacman:
@@ -372,30 +375,37 @@ class MCTSAgent(CaptureAgent):
             if invaders:
                 closest_inv = min([inv.getPosition() for inv in invaders],
                                 key=lambda p: self._manhattan(myPos, p))
-                return self._move_towards(myPos, closest_inv, state, agent_idx)
+                action = self._move_towards(myPos, closest_inv, state, agent_idx)
+                if action in legal:
+                    return action
 
         # Priority 3: Go to food (if we're pacman)
         if myState.isPacman:
             food = self.getFood(state).asList()
             if food:
                 closest_food = min(food, key=lambda f: self._manhattan(myPos, f))
-                return self._move_towards(myPos, closest_food, state, agent_idx)
+                action = self._move_towards(myPos, closest_food, state, agent_idx)
+                if action in legal:
+                    return action
 
         # Priority 4: Return home if carrying 8+
         if myState.isPacman and myState.numCarrying >= 8:
             boundary = self._get_boundary(state, agent_idx)
             if boundary:
                 closest_boundary = min(boundary, key=lambda b: self._manhattan(myPos, b))
-                return self._move_towards(myPos, closest_boundary, state, agent_idx)
+                action = self._move_towards(myPos, closest_boundary, state, agent_idx)
+                if action in legal:
+                    return action
 
         # Priority 5: Default - enter enemy territory
         boundary = self._get_boundary(state, agent_idx)
         if boundary:
             closest_boundary = min(boundary, key=lambda b: self._manhattan(myPos, b))
-            return self._move_towards(myPos, closest_boundary, state, agent_idx)
+            action = self._move_towards(myPos, closest_boundary, state, agent_idx)
+            if action in legal:
+                return action
 
         # Fallback: any legal action
-        legal = state.getLegalActions(agent_idx)
         legal = [a for a in legal if a != Directions.STOP]
         return random.choice(legal) if legal else Directions.STOP
 
@@ -409,6 +419,7 @@ class MCTSAgent(CaptureAgent):
             return Directions.STOP
 
         oppState = state.getAgentState(agent_idx)
+        legal = state.getLegalActions(agent_idx)
 
         # Model 1: Opponent chases our agents
         our_agents = self.getTeam(state)
@@ -424,17 +435,20 @@ class MCTSAgent(CaptureAgent):
         if our_pacmen and not oppState.isPacman:
             # Opponent is ghost, we have pacmen → chase closest pacman
             closest_pacman = min(our_pacmen, key=lambda p: self._manhattan(oppPos, p))
-            return self._move_towards(oppPos, closest_pacman, state, agent_idx)
+            action = self._move_towards(oppPos, closest_pacman, state, agent_idx)
+            if action in legal:
+                return action
 
         # Model 2: Opponent goes for food
         if oppState.isPacman:
             our_food = self.getFoodYouAreDefending(state).asList()
             if our_food:
                 closest_food = min(our_food, key=lambda f: self._manhattan(oppPos, f))
-                return self._move_towards(oppPos, closest_food, state, agent_idx)
+                action = self._move_towards(oppPos, closest_food, state, agent_idx)
+                if action in legal:
+                    return action
 
         # Default: random legal action
-        legal = state.getLegalActions(agent_idx)
         return random.choice(legal) if legal else Directions.STOP
 
     # Helper functions
