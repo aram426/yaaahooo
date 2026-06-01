@@ -97,6 +97,9 @@ class MCTSAgent(CaptureAgent):
         self.start = gameState.getAgentPosition(self.index)
         self.walls = gameState.getWalls()
 
+        # Track initial food count for reward shaping
+        self.initial_food_count = len(self.getFood(gameState).asList())
+
         print(f"Agent {self.index} initialized with teammate {self.teammate_index}")
 
     def chooseAction(self, gameState):
@@ -167,16 +170,38 @@ class MCTSAgent(CaptureAgent):
     def _expand(self, node):
         """
         Expansion phase: add one child to the tree.
+        Phase 3: Progressive widening - prioritize offensive actions.
         """
         # Initialize untried actions if needed
         if node.untried_actions is None:
-            node.untried_actions = self._get_legal_joint_actions(node.state)
+            # Get all legal joint actions
+            joint_actions = self._get_legal_joint_actions(node.state)
+
+            # Phase 3: Score actions by offensiveness
+            scored_actions = []
+            for joint_action in joint_actions:
+                # Simulate the action
+                successor = self._apply_joint_action(node.state, joint_action)
+
+                # Calculate offensiveness score
+                team = self.getTeam(successor)
+                num_pacmen = sum(1 for i in team if successor.getAgentState(i).isPacman)
+                carrying = sum(successor.getAgentState(i).numCarrying for i in team)
+                offensiveness = num_pacmen * 2 + carrying
+
+                scored_actions.append((joint_action, offensiveness))
+
+            # Sort by offensiveness (high to low)
+            scored_actions.sort(key=lambda x: x[1], reverse=True)
+
+            # Store sorted actions
+            node.untried_actions = [action for action, _ in scored_actions]
 
         # No untried actions left
         if not node.untried_actions:
             return node
 
-        # Pick first untried action (TODO: can prioritize offensive actions)
+        # Pick first untried action (most offensive)
         joint_action = node.untried_actions.pop(0)
 
         # Create successor state
@@ -238,7 +263,7 @@ class MCTSAgent(CaptureAgent):
 
     def _evaluate_state(self, state):
         """
-        Evaluate a game state and return a reward.
+        Evaluate a game state and return a reward with aggressive bias.
         Positive = good for our team, negative = bad.
         """
         # Base score
@@ -247,6 +272,26 @@ class MCTSAgent(CaptureAgent):
         # Adjust for team perspective
         if not self.red:
             score = -score
+
+        # Phase 3: Aggressive bias - reward shaping
+        team = self.getTeam(state)
+
+        # Bonus: agents in enemy territory (encourage offense)
+        num_pacmen = sum(1 for i in team if state.getAgentState(i).isPacman)
+        score += num_pacmen * 3.0  # +3 per pacman
+
+        # Bonus: carrying food (encourage holding food)
+        carrying_total = sum(state.getAgentState(i).numCarrying for i in team)
+        score += carrying_total * 0.8  # +0.8 per food carried
+
+        # Penalty: no one attacking (discourage full defense)
+        if num_pacmen == 0:
+            score -= 8.0  # -8 penalty for both defensive
+
+        # Bonus: food eaten (encourage progress)
+        food_left = len(self.getFood(state).asList())
+        food_eaten = self.initial_food_count - food_left
+        score += food_eaten * 1.5  # +1.5 per food eaten
 
         return score
 
