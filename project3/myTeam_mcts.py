@@ -170,28 +170,55 @@ class MCTSAgent(CaptureAgent):
     def _expand(self, node):
         """
         Expansion phase: add one child to the tree.
-        Phase 3: Progressive widening - prioritize offensive actions.
+        Phase 3 Experiment 1: Fast heuristic scoring (no simulation).
         """
         # Initialize untried actions if needed
         if node.untried_actions is None:
             # Get all legal joint actions
             joint_actions = self._get_legal_joint_actions(node.state)
 
-            # Phase 3: Score actions by offensiveness
+            # Phase 3 Experiment 1: Fast heuristic scoring without simulation
             scored_actions = []
             for joint_action in joint_actions:
-                # Simulate the action
-                successor = self._apply_joint_action(node.state, joint_action)
+                action0, action2 = joint_action
 
-                # Calculate offensiveness score
-                team = self.getTeam(successor)
-                num_pacmen = sum(1 for i in team if successor.getAgentState(i).isPacman)
-                carrying = sum(successor.getAgentState(i).numCarrying for i in team)
-                offensiveness = num_pacmen * 2 + carrying
+                # Fast heuristic: score by offensive direction
+                # For red team: East/North towards enemy (right/up)
+                # For blue team: West/North towards enemy (left/up)
+                score = 0
 
-                scored_actions.append((joint_action, offensiveness))
+                if self.red:
+                    # Red team goes right/up
+                    if action0 == Directions.EAST:
+                        score += 2
+                    elif action0 == Directions.NORTH:
+                        score += 1
 
-            # Sort by offensiveness (high to low)
+                    if action2 == Directions.EAST:
+                        score += 2
+                    elif action2 == Directions.NORTH:
+                        score += 1
+                else:
+                    # Blue team goes left/up
+                    if action0 == Directions.WEST:
+                        score += 2
+                    elif action0 == Directions.NORTH:
+                        score += 1
+
+                    if action2 == Directions.WEST:
+                        score += 2
+                    elif action2 == Directions.NORTH:
+                        score += 1
+
+                # Penalize STOP actions (encourage movement)
+                if action0 == Directions.STOP:
+                    score -= 5
+                if action2 == Directions.STOP:
+                    score -= 5
+
+                scored_actions.append((joint_action, score))
+
+            # Sort by score (high to low)
             scored_actions.sort(key=lambda x: x[1], reverse=True)
 
             # Store sorted actions
