@@ -6,11 +6,11 @@ import subprocess
 import re
 import sys
 
-def run_game():
+def run_game(opponent='baselineTeam'):
     """Run one game and return score"""
     try:
         result = subprocess.run(
-            ['python3', 'capture.py', '-q', '--red=myTeam', '--blue=baselineTeam'],
+            ['python3', 'capture.py', '-q', '--red=myTeam', f'--blue={opponent}'],
             timeout=60,
             capture_output=True,
             text=True
@@ -39,13 +39,14 @@ def run_game():
 
 def main():
     num_games = int(sys.argv[1]) if len(sys.argv) > 1 else 5
+    opponent = sys.argv[2] if len(sys.argv) > 2 else 'baselineTeam'
 
     results = []
-    print(f"Running {num_games} games...")
+    print(f"Running {num_games} games against {opponent}...")
 
     for i in range(num_games):
         print(f"\nGame {i+1}/{num_games}...", end=" ", flush=True)
-        result, score = run_game()
+        result, score = run_game(opponent)
         results.append((result, score))
         print(f"{result} ({score:+d})")
 
