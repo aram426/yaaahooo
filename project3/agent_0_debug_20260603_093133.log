@@ -1,0 +1,566 @@
+Agent 0 Debug Log (Role: offensive)
+============================================================
+
+
+--- Move 1 (EXPLORE North - East blocked) ---
+
+--- Move 2 (EXPLORE North - East blocked) ---
+
+--- Move 3 (EXPLORE South - East blocked) ---
+
+--- Move 4 (EXPLORE North - East blocked) ---
+
+--- Move 5 (EXPLORE North - East blocked) ---
+
+--- Move 6 (EXPLORE North - East blocked) ---
+
+--- Move 7 (EXPLORE South - East blocked) ---
+
+--- Move 8 (EXPLORE North - East blocked) ---
+
+--- Move 9 (EXPLORE South - East blocked) ---
+
+--- Move 10 (EXPLORE North - East blocked) ---
+
+--- Move 11 (EXPLORE North - East blocked) ---
+
+--- Move 12 (EXPLORE South - East blocked) ---
+
+--- Move 13 (EXPLORE North - East blocked) ---
+
+--- Move 14 (EXPLORE North - East blocked) ---
+
+--- Move 15 (EXPLORE North - East blocked) ---
+
+--- Move 16 (EXPLORE North - East blocked) ---
+
+--- Move 17 (EXPLORE North - East blocked) ---
+
+--- Move 18 (EXPLORE South - East blocked) ---
+
+--- Move 19 (EXPLORE South - East blocked) ---
+
+--- Move 20 (EXPLORE South - East blocked) ---
+
+--- Move 21 (EXPLORE South - East blocked) ---
+
+--- Move 22 (EXPLORE South - East blocked) ---
+
+--- Move 23 (EXPLORE North - East blocked) ---
+
+--- Move 24 (EXPLORE North - East blocked) ---
+
+--- Move 25 (EXPLORE North - East blocked) ---
+
+--- Move 26 (EXPLORE North - East blocked) ---
+
+--- Move 27 (EXPLORE North - East blocked) ---
+
+--- Move 28 (EXPLORE North - East blocked) ---
+
+--- Move 29 (EXPLORE North - East blocked) ---
+
+--- Move 30 (EXPLORE South - East blocked) ---
+
+--- Move 31 (EXPLORE South - East blocked) ---
+
+--- Move 32 (EXPLORE North - East blocked) ---
+
+--- Move 33 (EXPLORE North - East blocked) ---
+
+--- Move 34 (EXPLORE North - East blocked) ---
+
+--- Move 35 (FORCE EAST) ---
+Position: (1, 14)
+
+--- Move 36 (FORCE EAST) ---
+Position: (2, 14)
+
+--- Move 38 (EXPLORE South - East blocked) ---
+
+--- Move 39 (EXPLORE South - East blocked) ---
+
+--- Move 40 (EXPLORE South - East blocked) ---
+
+--- Move 41 (FORCE EAST) ---
+Position: (3, 10)
+
+--- Move 42 (FORCE EAST) ---
+Position: (4, 10)
+
+--- Move 43 (FORCE EAST) ---
+Position: (5, 10)
+
+--- Move 44 (EXPLORE South - East blocked) ---
+
+--- Move 45 (FORCE EAST) ---
+Position: (6, 9)
+
+--- Move 46 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 47 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['West', 'Stop']
+Action chosen: West
+Invaders detected: [(0, (10.0, 9.0))]
+MCTS: 2792 rollouts in 0.300s
+
+--- Move 48 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 49 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (12.0, 9.0))]
+MCTS: 2572 rollouts in 0.300s
+
+--- Move 50 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 51 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['West', 'Stop']
+Action chosen: Stop
+MCTS: 2528 rollouts in 0.300s
+
+--- Move 52 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2600 rollouts in 0.300s
+
+--- Move 53 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 54 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['West', 'Stop']
+Action chosen: Stop
+Invaders detected: [(0, (10.0, 6.0))]
+MCTS: 2576 rollouts in 0.300s
+
+--- Move 55 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -3
+Legal actions: ['West', 'Stop']
+Action chosen: West
+Invaders detected: [(0, (10.0, 7.0))]
+MCTS: 2682 rollouts in 0.300s
+
+--- Move 56 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 57 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -3
+Legal actions: ['West', 'Stop']
+Action chosen: Stop
+Invaders detected: [(0, (9.0, 6.0))]
+MCTS: 2714 rollouts in 0.300s
+
+--- Move 58 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['West', 'Stop']
+Action chosen: Stop
+Invaders detected: [(0, (9.0, 5.0))]
+MCTS: 2853 rollouts in 0.300s
+
+--- Move 59 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (9.0, 6.0))]
+MCTS: 2625 rollouts in 0.300s
+
+--- Move 60 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 61 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['West', 'Stop']
+Action chosen: Stop
+Invaders detected: [(0, (7.0, 6.0))]
+MCTS: 2808 rollouts in 0.300s
+
+--- Move 62 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (7.0, 5.0))]
+MCTS: 2724 rollouts in 0.300s
+
+--- Move 63 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 64 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['West', 'Stop']
+Action chosen: Stop
+Invaders detected: [(0, (5.0, 5.0))]
+MCTS: 2819 rollouts in 0.300s
+
+--- Move 65 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (5.0, 4.0))]
+MCTS: 2606 rollouts in 0.300s
+
+--- Move 66 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 67 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['West', 'Stop']
+Action chosen: Stop
+Invaders detected: [(0, (5.0, 2.0))]
+MCTS: 2638 rollouts in 0.300s
+
+--- Move 68 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -5
+Legal actions: ['West', 'Stop']
+Action chosen: West
+Invaders detected: [(0, (5.0, 1.0))]
+MCTS: 2795 rollouts in 0.300s
+
+--- Move 69 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 70 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -5
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (6.0, 2.0))]
+MCTS: 2689 rollouts in 0.300s
+
+--- Move 71 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 72 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -6
+Legal actions: ['West', 'Stop']
+Action chosen: Stop
+MCTS: 2657 rollouts in 0.300s
+
+--- Move 73 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['West', 'Stop']
+Action chosen: Stop
+MCTS: 2695 rollouts in 0.300s
+
+--- Move 74 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2711 rollouts in 0.300s
+
+--- Move 75 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 76 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2809 rollouts in 0.300s
+
+--- Move 77 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 78 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2640 rollouts in 0.300s
+
+--- Move 79 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 80 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2818 rollouts in 0.300s
+
+--- Move 81 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 82 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2612 rollouts in 0.300s
+
+--- Move 83 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 84 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['West', 'Stop']
+Action chosen: West
+MCTS: 2720 rollouts in 0.300s
+
+--- Move 85 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 86 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2578 rollouts in 0.300s
+
+--- Move 87 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 88 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2707 rollouts in 0.300s
+
+--- Move 89 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 90 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2584 rollouts in 0.300s
+
+--- Move 91 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 92 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (12.0, 8.0))]
+MCTS: 2724 rollouts in 0.300s
+
+--- Move 93 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 94 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (12.0, 10.0))]
+MCTS: 2570 rollouts in 0.300s
+
+--- Move 95 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 96 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2557 rollouts in 0.300s
+
+--- Move 97 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 98 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2737 rollouts in 0.300s
+
+--- Move 99 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 100 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -9
+Legal actions: ['West', 'Stop']
+Action chosen: Stop
+MCTS: 2578 rollouts in 0.300s
+
+--- Move 101 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -9
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2622 rollouts in 0.300s
+
+--- Move 102 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 103 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -9
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (8.0, 13.0))]
+MCTS: 2739 rollouts in 0.300s
+
+--- Move 104 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 105 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -10
+Legal actions: ['West', 'Stop']
+Action chosen: West
+Invaders detected: [(0, (8.0, 13.0))]
+MCTS: 2293 rollouts in 0.300s
+
+--- Move 106 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 107 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -10
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (8.0, 11.0))]
+MCTS: 2442 rollouts in 0.300s
+
+--- Move 108 (FORCE EAST) ---
+Position: (7, 9)
+
+--- Move 109 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -12
+Legal actions: ['West', 'Stop']
+Action chosen: Stop
+Invaders detected: [(0, (10.0, 11.0))]
+MCTS: 2921 rollouts in 0.300s
+
+--- Move 110 ---
+Position: (8, 9)
+isPacman: False
+Carrying: 0
+Score: -12
+Legal actions: ['West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (9.0, 11.0))]
+MCTS: 2567 rollouts in 0.300s
+
+--- Move 111 (FORCE EAST) ---
+Position: (7, 9)

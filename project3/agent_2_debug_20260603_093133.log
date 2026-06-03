@@ -1,0 +1,1068 @@
+Agent 2 Debug Log (Role: defensive)
+============================================================
+
+
+--- Move 1 ---
+Position: (1, 1)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'Stop']
+Action chosen: North
+MCTS: 2643 rollouts in 0.300s
+
+--- Move 2 ---
+Position: (1, 2)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2820 rollouts in 0.300s
+
+--- Move 3 ---
+Position: (1, 3)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2516 rollouts in 0.300s
+
+--- Move 4 ---
+Position: (1, 4)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2166 rollouts in 0.300s
+
+--- Move 5 ---
+Position: (1, 5)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2115 rollouts in 0.300s
+
+--- Move 6 ---
+Position: (1, 6)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2170 rollouts in 0.300s
+
+--- Move 7 ---
+Position: (1, 7)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2123 rollouts in 0.300s
+
+--- Move 8 ---
+Position: (1, 8)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2185 rollouts in 0.300s
+
+--- Move 9 ---
+Position: (1, 9)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2121 rollouts in 0.300s
+
+--- Move 10 ---
+Position: (1, 10)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2220 rollouts in 0.300s
+
+--- Move 11 ---
+Position: (1, 11)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2229 rollouts in 0.300s
+
+--- Move 12 ---
+Position: (1, 12)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2174 rollouts in 0.300s
+
+--- Move 13 ---
+Position: (1, 13)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2286 rollouts in 0.300s
+
+--- Move 14 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+MCTS: 2153 rollouts in 0.300s
+
+--- Move 15 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: East
+MCTS: 2482 rollouts in 0.300s
+
+--- Move 16 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: South
+MCTS: 2216 rollouts in 0.334s
+
+--- Move 17 ---
+Position: (3, 13)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2492 rollouts in 0.300s
+
+--- Move 18 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2324 rollouts in 0.300s
+
+--- Move 19 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2371 rollouts in 0.300s
+
+--- Move 20 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+MCTS: 2333 rollouts in 0.300s
+
+--- Move 21 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2445 rollouts in 0.300s
+
+--- Move 22 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+MCTS: 2348 rollouts in 0.300s
+
+--- Move 23 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: East
+MCTS: 2437 rollouts in 0.300s
+
+--- Move 24 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: South
+MCTS: 2332 rollouts in 0.300s
+
+--- Move 25 ---
+Position: (3, 13)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2445 rollouts in 0.300s
+
+--- Move 26 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: South
+MCTS: 2337 rollouts in 0.300s
+
+--- Move 27 ---
+Position: (3, 13)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2425 rollouts in 0.300s
+
+--- Move 28 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: South
+MCTS: 2332 rollouts in 0.300s
+
+--- Move 29 ---
+Position: (3, 13)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2426 rollouts in 0.300s
+
+--- Move 30 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: South
+MCTS: 2343 rollouts in 0.300s
+
+--- Move 31 ---
+Position: (3, 13)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2422 rollouts in 0.300s
+
+--- Move 32 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: South
+MCTS: 2345 rollouts in 0.300s
+
+--- Move 33 ---
+Position: (3, 13)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2427 rollouts in 0.300s
+
+--- Move 34 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2330 rollouts in 0.300s
+
+--- Move 35 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: East
+MCTS: 2417 rollouts in 0.300s
+
+--- Move 36 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: South
+MCTS: 2335 rollouts in 0.300s
+
+--- Move 37 ---
+Position: (3, 13)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2416 rollouts in 0.300s
+
+--- Move 38 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2341 rollouts in 0.300s
+
+--- Move 39 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: 0
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2419 rollouts in 0.300s
+
+--- Move 40 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: -1
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+MCTS: 2523 rollouts in 0.300s
+
+--- Move 41 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -1
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2438 rollouts in 0.300s
+
+--- Move 42 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: -1
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+MCTS: 2331 rollouts in 0.300s
+
+--- Move 43 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -1
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2435 rollouts in 0.300s
+
+--- Move 44 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: -1
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+MCTS: 2342 rollouts in 0.300s
+
+--- Move 45 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -1
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (11.0, 9.0))]
+MCTS: 2447 rollouts in 0.300s
+
+--- Move 46 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+Invaders detected: [(0, (10.0, 9.0))]
+MCTS: 3941 rollouts in 0.304s
+
+--- Move 47 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (11.0, 9.0))]
+MCTS: 4118 rollouts in 0.300s
+
+--- Move 48 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+Invaders detected: [(0, (12.0, 9.0))]
+MCTS: 3860 rollouts in 0.300s
+
+--- Move 49 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 3977 rollouts in 0.300s
+
+--- Move 50 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: South
+MCTS: 4251 rollouts in 0.300s
+
+--- Move 51 ---
+Position: (1, 13)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+MCTS: 3964 rollouts in 0.300s
+
+--- Move 52 ---
+Position: (1, 12)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['North', 'South', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: North
+MCTS: 3932 rollouts in 0.317s
+
+--- Move 53 ---
+Position: (1, 13)
+isPacman: False
+Carrying: 0
+Score: -2
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: Stop
+Invaders detected: [(0, (10.0, 6.0))]
+MCTS: 4160 rollouts in 0.300s
+
+--- Move 54 ---
+Position: (1, 13)
+isPacman: False
+Carrying: 0
+Score: -3
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (10.0, 7.0))]
+MCTS: 3781 rollouts in 0.300s
+
+--- Move 55 ---
+Position: (1, 12)
+isPacman: False
+Carrying: 0
+Score: -3
+Legal actions: ['North', 'South', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: North
+MCTS: 3975 rollouts in 0.300s
+
+--- Move 56 ---
+Position: (1, 13)
+isPacman: False
+Carrying: 0
+Score: -3
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (9.0, 6.0))]
+MCTS: 3774 rollouts in 0.300s
+
+--- Move 57 ---
+Position: (1, 12)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (9.0, 5.0))]
+MCTS: 3901 rollouts in 0.300s
+
+--- Move 58 ---
+Position: (1, 11)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (9.0, 6.0))]
+MCTS: 4066 rollouts in 0.300s
+
+--- Move 59 ---
+Position: (1, 10)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (8.0, 6.0))]
+MCTS: 3881 rollouts in 0.300s
+
+--- Move 60 ---
+Position: (1, 9)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (7.0, 6.0))]
+MCTS: 3847 rollouts in 0.300s
+
+--- Move 61 ---
+Position: (1, 8)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['North', 'South', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: South
+Invaders detected: [(0, (7.0, 5.0))]
+MCTS: 3662 rollouts in 0.300s
+
+--- Move 62 ---
+Position: (1, 7)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (6.0, 5.0))]
+MCTS: 3826 rollouts in 0.300s
+
+--- Move 63 ---
+Position: (1, 6)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (5.0, 5.0))]
+MCTS: 3850 rollouts in 0.300s
+
+--- Move 64 ---
+Position: (1, 5)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (5.0, 4.0))]
+MCTS: 3718 rollouts in 0.300s
+
+--- Move 65 ---
+Position: (1, 4)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (5.0, 3.0))]
+MCTS: 3748 rollouts in 0.300s
+
+--- Move 66 ---
+Position: (1, 3)
+isPacman: False
+Carrying: 0
+Score: -4
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (5.0, 2.0))]
+MCTS: 4030 rollouts in 0.300s
+
+--- Move 67 ---
+Position: (1, 2)
+isPacman: False
+Carrying: 0
+Score: -5
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (5.0, 1.0))]
+MCTS: 3987 rollouts in 0.300s
+
+--- Move 68 ---
+Position: (1, 1)
+isPacman: False
+Carrying: 0
+Score: -5
+Legal actions: ['North', 'Stop']
+Action chosen: Stop
+Invaders detected: [(0, (5.0, 2.0))]
+MCTS: 3911 rollouts in 0.300s
+
+--- Move 69 ---
+Position: (1, 1)
+isPacman: False
+Carrying: 0
+Score: -5
+Legal actions: ['North', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: North
+MCTS: 4167 rollouts in 0.300s
+
+--- Move 70 ---
+Position: (1, 2)
+isPacman: False
+Carrying: 0
+Score: -5
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+MCTS: 3965 rollouts in 0.300s
+
+--- Move 71 ---
+Position: (1, 1)
+isPacman: False
+Carrying: 0
+Score: -6
+Legal actions: ['North', 'Stop']
+Action chosen: North
+MCTS: 2388 rollouts in 0.300s
+
+--- Move 72 ---
+Position: (1, 2)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2399 rollouts in 0.300s
+
+--- Move 73 ---
+Position: (1, 3)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2400 rollouts in 0.300s
+
+--- Move 74 ---
+Position: (1, 4)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2188 rollouts in 0.300s
+
+--- Move 75 ---
+Position: (1, 5)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2310 rollouts in 0.300s
+
+--- Move 76 ---
+Position: (1, 6)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2122 rollouts in 0.300s
+
+--- Move 77 ---
+Position: (1, 7)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2385 rollouts in 0.300s
+
+--- Move 78 ---
+Position: (1, 8)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2246 rollouts in 0.300s
+
+--- Move 79 ---
+Position: (1, 9)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2277 rollouts in 0.300s
+
+--- Move 80 ---
+Position: (1, 10)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2178 rollouts in 0.300s
+
+--- Move 81 ---
+Position: (1, 11)
+isPacman: False
+Carrying: 0
+Score: -7
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2368 rollouts in 0.300s
+
+--- Move 82 ---
+Position: (1, 12)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2370 rollouts in 0.300s
+
+--- Move 83 ---
+Position: (1, 13)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2215 rollouts in 0.300s
+
+--- Move 84 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+MCTS: 2229 rollouts in 0.300s
+
+--- Move 85 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: East
+MCTS: 2378 rollouts in 0.300s
+
+--- Move 86 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2394 rollouts in 0.300s
+
+--- Move 87 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: East
+MCTS: 2267 rollouts in 0.300s
+
+--- Move 88 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: South
+MCTS: 2258 rollouts in 0.300s
+
+--- Move 89 ---
+Position: (3, 13)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+MCTS: 2413 rollouts in 0.300s
+
+--- Move 90 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['South', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2397 rollouts in 0.300s
+
+--- Move 91 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (12.0, 8.0))]
+MCTS: 2245 rollouts in 0.300s
+
+--- Move 92 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+Invaders detected: [(0, (12.0, 9.0))]
+MCTS: 2266 rollouts in 0.300s
+
+--- Move 93 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+Invaders detected: [(0, (12.0, 10.0))]
+MCTS: 2398 rollouts in 0.300s
+
+--- Move 94 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+MCTS: 2375 rollouts in 0.300s
+
+--- Move 95 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2377 rollouts in 0.300s
+
+--- Move 96 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+MCTS: 2391 rollouts in 0.300s
+
+--- Move 97 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['East', 'West', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: West
+MCTS: 2265 rollouts in 0.300s
+
+--- Move 98 ---
+Position: (1, 14)
+isPacman: False
+Carrying: 0
+Score: -8
+Legal actions: ['South', 'East', 'Stop']
+Action chosen: East
+MCTS: 2240 rollouts in 0.300s
+
+--- Move 99 ---
+Position: (2, 14)
+isPacman: False
+Carrying: 0
+Score: -9
+Legal actions: ['East', 'West', 'Stop']
+Action chosen: East
+MCTS: 2413 rollouts in 0.300s
+
+--- Move 100 ---
+Position: (3, 14)
+isPacman: False
+Carrying: 0
+Score: -9
+Legal actions: ['South', 'West', 'Stop']
+Action chosen: South
+MCTS: 2438 rollouts in 0.300s
+
+--- Move 101 ---
+Position: (3, 13)
+isPacman: False
+Carrying: 0
+Score: -9
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+MCTS: 2386 rollouts in 0.300s
+
+--- Move 102 ---
+Position: (3, 12)
+isPacman: False
+Carrying: 0
+Score: -9
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (8.0, 13.0))]
+MCTS: 2328 rollouts in 0.300s
+
+--- Move 103 ---
+Position: (3, 11)
+isPacman: False
+Carrying: 0
+Score: -10
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+MCTS: 2312 rollouts in 0.300s
+
+--- Move 104 ---
+Position: (3, 10)
+isPacman: False
+Carrying: 0
+Score: -10
+Legal actions: ['North', 'East', 'Stop']
+WARNING: Illegal action, using fallback!
+Action chosen: East
+Invaders detected: [(0, (8.0, 13.0))]
+MCTS: 2452 rollouts in 0.300s
+
+--- Move 105 ---
+Position: (4, 10)
+isPacman: False
+Carrying: 0
+Score: -10
+Legal actions: ['South', 'East', 'West', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (8.0, 12.0))]
+MCTS: 2465 rollouts in 0.300s
+
+--- Move 106 ---
+Position: (4, 9)
+isPacman: False
+Carrying: 0
+Score: -10
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: South
+Invaders detected: [(0, (8.0, 11.0))]
+MCTS: 2324 rollouts in 0.300s
+
+--- Move 107 ---
+Position: (4, 8)
+isPacman: False
+Carrying: 0
+Score: -11
+Legal actions: ['North', 'South', 'West', 'Stop']
+Action chosen: West
+Invaders detected: [(0, (9.0, 11.0))]
+MCTS: 2379 rollouts in 0.300s
+
+--- Move 108 ---
+Position: (3, 8)
+isPacman: False
+Carrying: 0
+Score: -12
+Legal actions: ['East', 'Stop']
+Action chosen: East
+Invaders detected: [(0, (10.0, 11.0))]
+MCTS: 2743 rollouts in 0.300s
+
+--- Move 109 ---
+Position: (4, 8)
+isPacman: False
+Carrying: 0
+Score: -12
+Legal actions: ['North', 'South', 'West', 'Stop']
+Action chosen: North
+Invaders detected: [(0, (9.0, 11.0))]
+MCTS: 2992 rollouts in 0.300s
+
+--- Move 110 ---
+Position: (4, 9)
+isPacman: False
+Carrying: 0
+Score: -12
+Legal actions: ['North', 'South', 'Stop']
+Action chosen: North
+Invaders detected: [(0, (8.0, 11.0))]
+MCTS: 2051 rollouts in 0.300s
+
+--- Move 111 ---
+Position: (4, 10)
+isPacman: False
+Carrying: 0
+Score: -12
+Legal actions: ['South', 'East', 'West', 'Stop']
+Action chosen: East
+Invaders detected: [(0, (8.0, 12.0))]
+MCTS: 3219 rollouts in 0.300s
